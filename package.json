@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build" : "webpack"
+    "dev": "webpack --mode development --module-bind js=babel-loader",
+    "build": "webpack --mode production --module-bind js=babel-loader"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,14 @@
   },
   "homepage": "https://github.com/JonnyyJ/NetflixDemo#readme",
   "devDependencies": {
-    "webpack": "^4.41.5"
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-redux": "^7.1.3",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
   }
 }
