@@ -35,7 +35,7 @@ module.exports = {
             }),
             new MiniCssExtractPlugin({
                 filename:"index.css"
-                //chunkFilename: "[id].css"
+                
             })
         ]
     
