@@ -4,20 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build" : "webpack"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JonnyyJ/NetflixDemo.git"
   },
-  "author": "",
+  "author": "Jonnyy",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JonnyyJ/NetflixDemo/issues"
   },
   "homepage": "https://github.com/JonnyyJ/NetflixDemo#readme",
   "devDependencies": {
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
+    "webpack": "^4.41.5"
   }
 }
