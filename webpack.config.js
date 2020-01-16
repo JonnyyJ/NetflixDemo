@@ -1,42 +1,21 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin")
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-
-
+const path = require('path');
+const HWP = require('html-webpack-plugin')
 module.exports = {
-    module:{
-        rules:[
-            {
-                test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
-                use:{
-                    loader: 'babel-loader'
-                }
-            },
-            {
-                test: /\.html$/,
-                use:[
-                    {
-                    loader:"html loader",
-                    options: {minimize: true}
-                }
-                ]
-            },
-            {
-                test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader, "css-loader"]
-            }
-        ]
+    entry: path.join(__dirname, '/src/index.js'),
+    output: {
+        filename: 'build.js',
+        path: path.join(__dirname, 'dist')
     },
-    /*plugin:
-        [
-            new HtmlWebPackPlugin({
-                template:"./src/index.html",
-                filename:"./index.html"
-            }),
-            new MiniCssExtractPlugin({
-                filename:"index.css"
-                
-            })
-        ]
-    */
+    module:{
+        rules:[{
+            test: /\.js$/,
+            exclude: /node_modules/,
+            loader: 'babel-loader'
+        }]
+    },
+    plugins: [
+        new HWP(
+            {template: path.join(__dirname, 'src/index.html')}
+        )
+    ]
 }
